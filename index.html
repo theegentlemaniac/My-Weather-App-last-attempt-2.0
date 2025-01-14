@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preload" href="CPT.jpeg" as="image">
+
+
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-info">
+            <div class="pic-gradient"></div>
+            <div class="today-info">
+                <h2 id="day">---</h2>
+                <span id="date">---</span>
+                <div>
+                    <i class='bx bx-current-location'></i>
+                    <span id="location">---</span>
+                </div>
+            </div>
+            <div class="today-weather">
+                <i class='bx' id="weather-icon"></i>
+                <h1 class="weather-temp" id="temperature">°C</h1>
+                <h3 id="description">---</h3>
+            </div>
+        </div>
+
+        <div class="right-info">
+            <div class="day-info">
+                <div>
+                    <span class="title">Precipitation</span>
+                    <span class="value" id="precipitation">%</span>
+                </div>
+                <div>
+                    <span class="title">Humidity</span>
+                    <span class="value" id="humidity">%</span>
+                </div>
+
+                <div>
+                    <span class="title">Wind Speed</span>
+                    <span class="value" id="wind-speed"> --- m/s NNW</span>
+                </div>
+
+                <div>
+                    <span class="title">Time (SAST)</span>
+                    <span class="value" id="time">>--:--:--<</span>
+                </div>
+                
+
+
+
+
+            </div>
+            <ul class="days-list" id="forecast">
+                <!-- Forecast data dynamically rendered here -->
+            </ul>
+            <input type="text" id="city" placeholder="Enter City">
+            <div class="btn-container">
+                <button class="loc-button" onclick="getWeather()">Get Weather</button>
+            </div>
+        </div>
+
+       <div id="map"></div>
+        
+    </div>
+    
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #0d3a56;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 550px;
+    background-color: #0f0f41;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35) ;
+}
+
+.left-info{
+    width: 260px;
+    height: 100%;
+    float: left;
+    display: flex;
+    border-radius:25px ;
+    justify-content: center;
+    background: url(CPT.jpeg);
+    background-position: center;
+    background-size: cover;
+    transform: scale(1.03) perspective(200px);
+    cursor: pointer;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.left-info:hover{
+    transform: scale(1.1) perspective(2500px) rotateY(5deg);
+}
+
+.pic-gradient{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #5c6bc0 10%, #0d47a1 100%);
+    border-radius: 25px;
+    opacity: 0.5;
+
+}
+
+.today-info{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.today-weather{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 20px;
+    left: 20px;
+}
+
+.today-weather .bx{
+    font-size: 4.6rem;
+}
+
+.weather-temp{
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+
+.right-info{
+    float: right;
+    position: relative;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.day-info{
+    padding: 25px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-info div:not(:last-child){
+    margin-bottom: 6px;
+    
+}
+
+.day-info div .title{
+    font-weight: 700;
+}
+
+.day-info div .value{
+    float: right;
+    margin-left: 70px;
+}
+
+.days-list{
+    display: flex;
+    list-style: none;
+    margin: 10px 35px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+}
+
+.days-list li{
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.days-list li .bx{
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.days-list li:hover{
+    transform: scale(1.1);
+    background: #fff;
+    color: #222831;
+    box-shadow: 0 5px 15px rgba(0,0,0,35);
+
+}
+
+.days-list li.day-temp{
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+.btn-container{
+    padding: 25px 35px;
+}
+
+.loc-button{
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 10px;
+    background: #303f9f;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.loc-button:hover{
+    background: #1a237e;
+}
+
+input {
+    outline: none;
+    width: 80%; /* Reduced width */
+    max-width: 300px; /* Optional: Set a max width for larger screens */
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px; /* Matches the button's border-radius */
+    margin: 20px auto 0 auto; /* Center the input field */
+    display: block; /* Ensures proper centering */
+    border: none;
+    font-weight: 700; /* Matches the font weight of the button */
+    background: #a7b1ef; /* Matches the button's background color */
+    color: #fff; /* Matches the button's text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+input::placeholder {
+    color: #d1d1d1; /* Placeholder color for better visibility */
+}
+
+input:hover {
+    background: #1a237e; /* Matches the button's hover background */
+}
+
+input:focus {
+    background: #1a237e; /* Matches the hover effect when focuse*/
+}
+
+#map{
+    width: 100%; /* Ensure it takes full width */
+    height: 300px; /* Adjust the height of the map */
+    border-radius: 10px;
+    margin-top: 20px;
+    z-index: -1;
+}
+
