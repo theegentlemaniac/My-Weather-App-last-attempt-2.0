@@ -23,7 +23,7 @@ function updateMap(lat, lon) {
   marker.setLatLng([lat, lon]);
 }
 
-// Function to get weather data
+// Function to get weather data by city
 function getWeather() {
   const apiKey = "2ffda2bc6652d34e1283befd1fcc6db4";
   const city = document.getElementById("city").value;
@@ -110,55 +110,61 @@ function updateForecast(forecast) {
 
 // Function to update South African time and date
 function updateSouthAfricanTimeAndDate() {
-  const now = new Date();
-  const southAfricaOffset = 2; // SAST is UTC+2
-  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-  const southAfricanTime = new Date(utc + southAfricaOffset * 3600000);
+  const updateTime = () => {
+    const now = new Date();
+    const southAfricaOffset = 2; // SAST is UTC+2
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    const southAfricanTime = new Date(utc + southAfricaOffset * 3600000);
 
-  // Format day
-  const dayName = southAfricanTime.toLocaleDateString("en-US", { weekday: "long" });
-  document.getElementById("day").innerText = dayName;
+    // Format day
+    const dayName = southAfricanTime.toLocaleDateString("en-US", { weekday: "long" });
+    document.getElementById("day").innerText = dayName;
 
-  // Format date
-  const date = southAfricanTime.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  document.getElementById("date").innerText = date;
-
-  // Format time
-  const formattedTime = southAfricanTime.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-  document.getElementById("time").innerText = formattedTime;
-
-  // Update the time every second
-  setInterval(() => {
-    const newNow = new Date();
-    const newUtc = newNow.getTime() + newNow.getTimezoneOffset() * 60000;
-    const newSouthAfricanTime = new Date(newUtc + southAfricaOffset * 3600000);
-
-    const newFormattedTime = newSouthAfricanTime.toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
-
-    const newDayName = newSouthAfricanTime.toLocaleDateString("en-US", { weekday: "long" });
-    const newDate = newSouthAfricanTime.toLocaleDateString("en-US", {
+    // Format date
+    const date = southAfricanTime.toLocaleDateString("en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
+    document.getElementById("date").innerText = date;
 
-    document.getElementById("time").innerText = newFormattedTime;
-    document.getElementById("day").innerText = newDayName;
-    document.getElementById("date").innerText = newDate;
-  }, 1000);
+    // Format time
+    const formattedTime = southAfricanTime.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+    document.getElementById("time").innerText = formattedTime;
+  };
+
+  updateTime();
+  setInterval(updateTime, 1000); // Update the time every second
 }
 
-// Initialize the map on page load
+// Function to locate the user's current position
+function locateUser() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        // Update the map and marker with the user's location
+        updateMap(lat, lon);
+      },
+      (error) => {
+        console.error("Error getting location:", error);
+        alert("Unable to retrieve your location. Please check your browser settings.");
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by your browser.");
+  }
+}
+
+// Add a button or call `locateUser()` on page load if you want to auto-detect location
+document.getElementById("locate-btn").addEventListener("click", locateUser);
+
+// Initialize the map and time on page load
 initializeMap();
+updateSouthAfricanTimeAndDate();
