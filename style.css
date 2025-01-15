@@ -19,7 +19,7 @@ body{
 }
 
 .container{
-    height: 550px;
+    height: 600px;
     background-color: #0f0f41;
     color: #fff;
     border-radius: 25px;
@@ -90,6 +90,7 @@ body{
     height: 100%;
     padding-top: 25px;
 }
+
 
 .day-info{
     padding: 25px 35px;
@@ -169,6 +170,32 @@ body{
 .loc-button:hover{
     background: #1a237e;
 }
+
+#locate-btn{
+    outline: none;
+    cursor: pointer;
+    width: 80%;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin: 20px auto 0 auto;
+    display: block;
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 10px;
+    background: #303f9f;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border: none;
+    transition: all 0.3s ease;
+
+}
+
+#locate-btn:hover{
+    background: #1a237e;
+}
+
+
+
 
 input {
     outline: none;
