@@ -3,276 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="style.css">
-    <link rel="shorcut icon" type="my-icon" href="me.webp">
-    <title>Personal Website</title>
-    <script src="https://kit.fontawesome.com/6fcd0eade4.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preload" href="CPT.jpeg" as="image">
+
+
+    <title>Weather App</title>
 </head>
 <body>
 
-    <div id="header">
-        <div class="container">
-            <nav>
-            <img src="NdumisoBG.png" class = "logo"> 
-            <ul>
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-               <!--<i class="fa-solid fa-x" onclick="closemenu()"></i>-->
-
-            </ul>    
-            
-           <!-- <i class="fa-solid fa-bars" onclick="openmenu()"></i>-->
-
-            </nav>
-
-            <div class="header-text">
-                <p>Computer Science Student, Graphic Designer<br> and Video Editor</p>
-                <h1>Hi, I'm <span>Ndumiso Maphanga</span><br>from South Africa </h1>
-
-            </div>
-        </div>
-
-    </div>
-    
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                        <img src="me.webp">
-                </div>
-
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>Hi, I’m Ndumiso! I’m a Computer Science student at the University of the Witwatersrand, 
-                        combining my technical expertise with creative passions as a graphic designer and video editor. 
-                        With experience in programming languages like JavaScript, Python, C++, and Java, I enjoy crafting 
-                        responsive websites and innovative digital solutions. Beyond coding, I thrive on creative 
-                        expression through graphic design and video editing, while also engaging in philosophy, basketball, football, 
-                        and meaningful interactions with diverse people. Whether I’m solving problems, exploring ideas, 
-                        or creating visual stories, I’m always driven by curiosity and a desire to make an impact</p>
-                        
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick = "opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick= "opentab('education')">Education</p>
-
-                        </div>
-
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Graphic Designer</span><br> Social Media posts, Website layouts, Banners, Advertisements and commercials</li>
-                                <li><span>Web Development</span><br>Developing functional and responsive web applications, focusing on both front-end solutions</li>
-                                <li><span>Video Editing</span><br>Producing engaging social media videos tailored for various platforms, assembling raw footage and ading the relevant elements such as animations to enhance the final output</li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>Former TedXUniversity of Pretoria Content Creator</span><br> Designed social media posts, website layouts, banners, advertisements, and commercials to promote events effectively</li>
-                                <li><span>Hackathon Participations </span><br>Engaged in hackathons such as Azure/AWS Hackathons and Derivco Hackathons, working on innovative web application development solutions.</li>
-                                <li><span>Personal projects</span><br>Created a weather app, demonstrating proficiency in API integration, Developed a chess game, showcasing skills in logic programming and game design. </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li>
-                                    <span><strong>Bachelor’s Degree in Computer Science (Ongoing)</strong></span><br>
-                                    <p>
-                                        Currently pursuing a Computer Science degree, focusing on theoretical and practical knowledge in computing and software development.
-                                    </p>
-                                    <ul>
-                                        <li>Proficient in various programming languages, including Python, C++, Java, C#, HTML, CSS, JavaScript, and React.</li>
-                                        <li>Developing expertise in problem-solving, algorithm design, and modern web and application development techniques.</li>
-                                        <li>Engaged in team projects and solo work to create real-world applications.</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <span><strong>Completed a few online coding courses</strong></span><br>
-                                    <p>
-                                        Acquired skills in web application development through structured online learning platforms, covering topics like:
-                                    </p>
-                                    <ul>
-                                        <li>Building responsive websites using HTML, CSS, and JavaScript.</li>
-                                        <li>Introduction to frameworks and libraries like React for modern web development.</li>
-                                        <li>Version control and collaborative development using Git and GitHub.</li>
-                                    </ul>
-                                </li>
-                                <!---
-                                <li>
-                                    <span><strong>Video Editing</strong></span><br>
-                                    Social media videos: Assembling raw footage into a coherent visual narrative through rigorous manipulation and the addition of relevant elements.
-                                </li>
-                                -->
-                            </ul>
-                        </div>
-                        
-                          
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-    <!-------------Services------------------------>
-
-<div id="services">
     <div class="container">
-        <h1 class = "sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-code"></i>
-                <h2>Web Design</h2>
-                <!--<p>huhouhouhouhouhouhouhouho</p>
-                <a href="#"> Learn more </a>-->
-            </div>
 
-            <div>
-                <i class="fa-solid fa-pen-nib"></i>
-                <h2>Graphic Designing</h2>
-                <!--
-                <p>huhouhouhouhouhouhouhouho</p>
-                <a href="#"> Learn more </a>-->
-            </div>
-
-            <div>
-                <i class="fa-solid fa-video"></i>
-                <h2>Video Editing</h2>
-                <!--
-                <p>huhouhouhouhouhouhouhouho</p>
-                <a href="#"> Learn more </a>-->
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-
-
-<!-----------------Portfolio---------------->
-
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <!-- Weather App -->
-            <div class="work">
-                <div class="iframe-container">
-                    <iframe src="https://theegentlemaniac.github.io/My-Weather-App-last-attempt-2.0/" style="border: 1px solid #ccc; border-radius: 8px;"></iframe>
-                </div>
-                <div class="layer">
-                    <h3>Weather App</h3>
-                    <p>Check the live weather updates!</p>
-                    <a href="https://theegentlemaniac.github.io/My-Weather-App-last-attempt-2.0/" target="_blank" class="app-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <h1>Ndumiso's weather app</h1>
+        <div class="left-info">
+            <div class="pic-gradient"></div>
+            <div class="today-info">
+                <h2 id="day">---</h2>
+                <span id="date">---</span>
+                <div>
+                    <i class='bx bx-current-location'></i>
+                    <span id="location">---</span>
                 </div>
             </div>
-
-            <!-- Other Projects -->
-            <div class="work">
-                <img src="me.webp">
-                <div class="layer">
-                    <h3>Graphic Design App</h3>
-                    <p>You can download it from the app store</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-
-            <div class="work">
-                <video src="Wits Maps advert.mp4" muted autoplay loop playsinline></video>
-                <div class="layer">
-                    <h3>Sample Edited Video</h3>
-                    <p>You can download it from the app store</p>
-                    <a href="#" class="play-video"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+            <div class="today-weather">
+                <i class='bx' id="weather-icon"></i>
+                <h1 class="weather-temp" id="temperature">°C</h1>
+                <h3 id="description">---</h3>
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="right-info">
+            <div class="day-info">
+                <div>
+                    <span class="title">Precipitation</span>
+                    <span class="value" id="precipitation">%</span>
+                </div>
+                <div>
+                    <span class="title">Humidity</span>
+                    <span class="value" id="humidity">%</span>
+                </div>
+
+                <div>
+                    <span class="title">Wind Speed</span>
+                    <span class="value" id="wind-speed"> --- m/s NNW</span>
+                </div>
+
+                <div>
+                    <span class="title">Time (SAST)</span>
+                    <span class="value" id="time">>--:--:--<</span>
+                </div>
+                
 
 
 
-    <div id="Languages">
-        <h1 class="lang-sub-title">Languages I'm proficient in</h1>
-        <div class="lang-container">
+
+            </div>
+            <ul class="days-list" id="forecast">
+                <!-- Forecast data dynamically rendered here -->
+            </ul>
+            <input type="text" id="city" placeholder="Enter City">
+            <div class="btn-container">
+                <button class="loc-button" onclick="getWeather()">Get Weather</button>
+            </div>
+
+            <button id="locate-btn"><i class='bx bxs-map'></i>         Locate Me</button>
+
+        </div>
+
+       <div id="map"></div>
         
-    
-            <div class="slider">
-
-                    <span style="--i:1;"><img src="./logos/java.png"></span>
-                    <span style="--i:2;"><img src="./logos/cplusplus-logo.png"></span>
-                    <span style="--i:3;"><img src="./logos/Python-logo.png"></span>
-                    <span style="--i:4;"><img src="./logos/C-logo.png"></span>
-                    <span style="--i:5;"><img src="./logos/javascript-logo-0.png"></span>
-                    <span style="--i:6;"><img src="./logos/html5-logo.png"></span>
-                    <span style="--i:7;"><img src="./logos/css-small-logo.png"></span>
-                    <span style="--i:8;"><img src="./logos/tw-logo.png"></span>
-                    <!--<span style ="--i:9;"><img src = "./logos/React.png"></span>-->
-
-            </div>
-    
-        </div>
-    </div>
-
-    <a href="#" class="btn">See more</a>
-
-</div>
-</div>
-
-
-<!-----------------------------contact--------------------------->
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i>nmsmaphanga@gmail.com</p>
-                <p><i class="fa-solid fa-phone-square"></i>0673509278</p>
-                <div class="social-icons">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter-square"></i></a>
-                    <a href="https://www.instagram.com/nduhimiso/?hl=en"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/ndumisomaphanga/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/theegentlemaniac"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <a href="Ndumiso Maphanga's Resume.pdf" download class="btn btn2">Download Resume</a>
-
-            </div>
-
-            <div class="contact-right">
-                    <form>
-                        <input type="text" name = "Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2" >Submit</button>
-
-                     </form>
-
-
-            </div>
-
     </div>
     
-    <div class="copyright">
-        <p>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> made by Ndumiso </p>
-    </div>
-
-</div>
-
-</div>
-
-
 
 
     <script src="./script.js"></script>
-    
 </body>
 </html>
